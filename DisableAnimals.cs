@@ -1,7 +1,7 @@
 namespace Oxide.Plugins
 {
     [Info("Disable Animals", "Bazz3l", "1.0.0")]
-    [Description("Disables animal movements and actions.")]
+    [Description("Disables animal movements and senses.")]
     class DisableAnimals : RustPlugin
     {
         void OnEntitySpawned(BaseAnimalNPC animal) => DisableAnimalNPC(animal);
