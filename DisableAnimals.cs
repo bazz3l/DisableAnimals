@@ -4,8 +4,9 @@ namespace Oxide.Plugins
     [Description("Disables animal movements and senses.")]
     class DisableAnimals : RustPlugin
     {
+        #region Oxide
         void OnEntitySpawned(BaseAnimalNPC animal) => DisableAnimalNPC(animal);
-
+        
         void DisableAnimalNPC(BaseAnimalNPC animal)
         {
             if (animal == null || !animal.isServer)
@@ -19,5 +20,6 @@ namespace Oxide.Plugins
 
             AnimalSensesLoadBalancer.animalSensesLoadBalancer.Remove(animal);
         }
+        #endregion
     }
 }
