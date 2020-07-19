@@ -6,13 +6,12 @@ namespace Oxide.Plugins
     {
         #region Oxide
         void OnEntitySpawned(BaseAnimalNPC animal) => DisableAnimalNPC(animal);
-        
+        #endregion
+
+        #region Core
         void DisableAnimalNPC(BaseAnimalNPC animal)
         {
-            if (animal == null || !animal.isServer)
-            {
-                return;
-            }
+            if (animal == null || !animal.isServer) return;
 
             animal.CancelInvoke(animal.TickAi);
             animal.CurrentBehaviour = BaseNpc.Behaviour.Idle;
